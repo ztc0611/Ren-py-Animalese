@@ -46,7 +46,7 @@ init python:
                 char = sentence[i]
             elif sentence[i] in string.punctuation:
                 char = dots
-            i+=1
+            i+=2
 
             if char != None:
                 new_segment = AudioSegment.from_wav(config.gamedir+"/audio/beeps/"+name+"/{}.wav".format(char))
@@ -54,6 +54,7 @@ init python:
 
         sentence_wav = change_playback_speed(sentence_wav, voice)
         sentence_wav.export(config.gamedir+"/audio/output.wav", format="wav")
+        #return sentence_wav
 
     #Replaces swear words with a "dot" sound effect. Can be disabled by commenting out line 36.
     def replace_swear_words(sentence):
@@ -98,18 +99,5 @@ init python:
 
     #Speeds up the playback to make it sound more garbled and less decipherable.
     def change_playback_speed(sound, speed_change):
-        export = sound.speedup(15.0, 200, 10)
+        export = sound.speedup(6.0, 200, 30)
         return export
-
-    #Leftovers from the original python script. Left here commented out in case they are of some use to someone.
-    #def build_and_say_sentence(sentence):
-    #    sound = build_sentence(sentence)
-    #    sound = change_playback_speed(sound, random.uniform(1.75,2.5))
-    #    play(sound)
-    #    return sound
-
-    #def build_and_say_sentence_with_voice(sentence, voice):
-    #    sound = build_sentence(sentence)
-    #    sound = change_playback_speed(sound, voice)
-    #    renpy.sound.play(sentence, channel="beeps", loop=False)
-    #    return sound
