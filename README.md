@@ -8,7 +8,7 @@
 
 Enjoy making your own samples and using this Animalese generator in your projects!
 
-~IMPORTANT NOTE: TEXT SPEED (IN OPTIONS.RPY) MUST BE MODIFIED FROM INSTANT (AKA NOT EQUAL TO 0) FOR THIS TO WORK IN OTHER PROJECTS.~
+IMPORTANT NOTE: TEXT SPEED (IN OPTIONS.RPY) MUST BE MODIFIED FROM INSTANT (AKA NOT EQUAL TO 0) FOR THIS TO WORK IN OTHER PROJECTS.
 
 ## Credits: 
 Created by Henry from harryishuman, for his "How to speak Animalese" video: https://youtu.be/IKMjg2fEGgE (Modified and reposted with his explicit permission), Also the source of the audio samples.
