@@ -12,6 +12,7 @@ IMPORTANT NOTE: TEXT SPEED (IN OPTIONS.RPY) MUST BE MODIFIED FROM INSTANT (AKA N
 
 ## Credits: 
 Created by Henry from harryishuman, for his "How to speak Animalese" video: https://youtu.be/IKMjg2fEGgE (Modified and reposted with his explicit permission), Also the source of the audio samples.
+
 Modified for Ren'py by CoolerMudkip/Zach Coleman.
 
 ===============================================================================
