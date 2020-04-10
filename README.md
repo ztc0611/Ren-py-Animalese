@@ -16,9 +16,8 @@ Modified for Ren'py by CoolerMudkip/Zach Coleman.
 
 ===============================================================================
 
-Original Readme was as follows:
+#Original Readme was as follows:
 
-# Read Me
 ## What is this?
 The "animalese.py" script, is a Python script intended to emulate the vocalisations of characters from the Animal Crossing series.
 
