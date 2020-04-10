@@ -1,5 +1,5 @@
-# Ren'py version Readme
-## Files that must be moved into another project in order to function:
+# Ren'py-Animalese Readme
+Files that must be moved into another project in order to function:
 
 * The full "pydub" folder
 * the full "audio" folder
