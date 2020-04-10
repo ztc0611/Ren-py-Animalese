@@ -1,10 +1,10 @@
 # Ren'py version Readme
 ## Files that must be moved into another project in order to function:
 
--The full "pydub" folder
--the full "audio" folder
--The character callbacks in script.rpy, modified for the names of your own characters.
--speak.rpy
+* The full "pydub" folder
+* the full "audio" folder
+* The character callbacks in script.rpy, modified for the names of your own characters.
+* speak.rpy
 
 Enjoy making your own samples and using this Animalese generator in your projects!
 
