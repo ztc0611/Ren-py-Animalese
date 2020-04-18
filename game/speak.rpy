@@ -32,8 +32,8 @@ init python:
     #Builds the sentence when given a sentence and a character's name using their speech garble.
     def build_sentence(sentence, name):
 
-        #If the player isn't skipping and the voice volume is enabled, then generate the text sounds.
-        if renpy.get_skipping() == None and renpy.game.preferences.volumes.get('voice', 1.0) > 0:
+        #If the player isn't skipping and the voice volume setting isn't 0/muted, then generate the text sounds.
+        if renpy.get_skipping() == None and preferences.volumes['voice'] > 0:
             sentence_wav = AudioSegment.empty()
             sentence = sentence.lower()
             sentence = replace_swear_words(sentence)
