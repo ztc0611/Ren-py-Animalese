@@ -31,30 +31,32 @@ init python:
 
     #Builds the sentence when given a sentence and a character's name using their speech garble.
     def build_sentence(sentence, name):
-        sentence_wav = AudioSegment.empty()
-        sentence = sentence.lower()
-        sentence = replace_swear_words(sentence)
-        sentence = replace_parentheses(sentence)
-        sentence = replace_numbers(sentence)
-        i = 0
-        while (i < len(sentence)):
-            char = None
-            if (i < len(sentence)-1) and ((sentence[i] + sentence[i+1]) in digraphs):
-                char = sentence[i] + sentence[i+1]
-                i+=1
-            elif sentence[i] in letter_graphs:
-                char = sentence[i]
-            elif sentence[i] in string.punctuation:
-                char = dots
-            i+=2
 
-            if char != None:
-                new_segment = AudioSegment.from_wav(config.gamedir+"/audio/beeps/"+name+"/{}.wav".format(char))
-                sentence_wav += new_segment
+        #If the player isn't skipping and the voice volume is enabled, then generate the text sounds.
+        if renpy.get_skipping() == None and renpy.game.preferences.volumes.get('voice', 1.0) > 0:
+            sentence_wav = AudioSegment.empty()
+            sentence = sentence.lower()
+            sentence = replace_swear_words(sentence)
+            sentence = replace_parentheses(sentence)
+            sentence = replace_numbers(sentence)
+            i = 0
+            while (i < len(sentence)):
+                char = None
+                if (i < len(sentence)-1) and ((sentence[i] + sentence[i+1]) in digraphs):
+                    char = sentence[i] + sentence[i+1]
+                    i+=1
+                elif sentence[i] in letter_graphs:
+                    char = sentence[i]
+                elif sentence[i] in string.punctuation:
+                    char = dots
+                i+=2
 
-        sentence_wav = change_playback_speed(sentence_wav, voice)
-        sentence_wav.export(config.gamedir+"/audio/output.wav", format="wav")
-        #return sentence_wav
+                if char != None:
+                    new_segment = AudioSegment.from_wav(config.gamedir+"/audio/beeps/"+name+"/{}.wav".format(char))
+                    sentence_wav += new_segment
+
+            sentence_wav = change_playback_speed(sentence_wav, voice)
+            sentence_wav.export(config.gamedir+"/audio/output.wav", format="wav")
 
     #Replaces swear words with a "dot" sound effect. Can be disabled by commenting out line 36.
     def replace_swear_words(sentence):
